@@ -21,27 +21,25 @@ let durationBetweenDates = (startDate, endDate, format) => {
     days = 1000 * 60 * 60 * 24;
 
     if (format === 'seconds') {
-        return (new Date(endDate) - new Date(startDate)) / seconds;
+        return Math.abs((new Date(endDate) - new Date(startDate)) / seconds);
     }
     else if (format === 'minutes') {
-        return (new Date(endDate) - new Date(startDate)) / minutes;
+        return Math.abs((new Date(endDate) - new Date(startDate)) / minutes);
     }
     else if (format === 'hours') {
-        return (new Date(endDate) - new Date(startDate)) / hours;
+        return Math.abs((new Date(endDate) - new Date(startDate)) / hours);
     }
     else if (format === 'days') {
-        return (new Date(endDate) - new Date(startDate)) / days;
+        return Math.abs((new Date(endDate) - new Date(startDate)) / days);
     };
-}
+};
 
 let result1 = durationBetweenDates('02 Aug 1985', '03 Aug 1985', 'seconds');  // поверне '86400 seconds'*
-let result2 = durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days')  // поверне '362 days'*
+let result2 = durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days');  // поверне '362 days'*
 
-result1 = Math.abs(result1)
-result2 = Math.abs(result2)
 
-console.log('result =>',result1,'seconds');
-console.log('result =>',result2,'days');
+console.log(result1,'seconds');
+console.log(result2,'days');
 
 //Just visual enter
 console.log('------------------------')
@@ -55,7 +53,7 @@ console.log('')
 
 
 
-console.log("**Задача про перетворення об'єкту**")
+console.log("** Задача про перетворення об'єкту **")
 
 // Допустимо у вас є об'єкт, у якому кожен ключ - це назва товару (одинм словом), а значення - його ціна.
 // Напишіть функцію яка буде всі ключі переводити у нижній регістр, а всі ціни буде заокруглювати до двох знаків після коми.
@@ -81,7 +79,7 @@ console.log('')
 
 
 
-console.log("**Задача про рекурсію та ітерацію**");
+console.log("** Задача про рекурсію та ітерацію **");
 
 // 1. Функцію яка рекурсивно буде знаходити суму всіх непарних додатніх чисел до якогось числа.
 
