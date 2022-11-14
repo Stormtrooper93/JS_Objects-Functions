@@ -13,7 +13,7 @@ console.log('** Задача про обчислення різниці часу
 // Функція має коректно працювати навіть якщо початкова дата пізніше ніж кінцева дата.
 
 
-let durationBetweenDates = (startDate, endDate, format) => {
+let durationBetweenDates = (startDate = '10 August 1993', endDate = '14 November 2022', format = 'hours') => {
     
     seconds = 1000;
     minutes = 1000 * 60;
@@ -21,25 +21,28 @@ let durationBetweenDates = (startDate, endDate, format) => {
     days = 1000 * 60 * 60 * 24;
 
     if (format === 'seconds') {
-        return Math.abs((new Date(endDate) - new Date(startDate)) / seconds);
+        return Math.abs((new Date(endDate) - new Date(startDate)) / seconds)+" seconds";
     }
     else if (format === 'minutes') {
-        return Math.abs((new Date(endDate) - new Date(startDate)) / minutes);
+        return Math.abs((new Date(endDate) - new Date(startDate)) / minutes)+" minutes";
     }
     else if (format === 'hours') {
-        return Math.abs((new Date(endDate) - new Date(startDate)) / hours);
+        return Math.abs((new Date(endDate) - new Date(startDate)) / hours)+" hours";
     }
     else if (format === 'days') {
-        return Math.abs((new Date(endDate) - new Date(startDate)) / days);
+        return Math.abs((new Date(endDate) - new Date(startDate)) / days)+" days";
     };
 };
 
 let result1 = durationBetweenDates('02 Aug 1985', '03 Aug 1985', 'seconds');  // поверне '86400 seconds'*
 let result2 = durationBetweenDates('31 Jan 2022', '03 Feb 2021', 'days');  // поверне '362 days'*
+let result3 = durationBetweenDates ();
 
 
-console.log(result1,'seconds');
-console.log(result2,'days');
+console.log(result1);
+console.log(result2);
+console.log(result3);
+
 
 //Just visual enter
 console.log('------------------------')
