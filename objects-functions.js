@@ -63,22 +63,13 @@ console.log("**Задача про перетворення об'єкту**")
 const priceData = {
   Apples: '23.4',
   BANANAS: '48',
-  oRAngGEs: '48.7584',
+  oRAnGEs: '48.7584',
 };
 
-function optimizer(data) {
-    const optimized = Object.fromEntries(Object.entries(data).map(([key, value]) => [key.toLowerCase(), value]));
-};
-
-let updatedPriceData = optimizer(priceData);
-
-console.log(updatedPriceData); // {apples: '23.40', bananas: '48.00', oranges: '48.76'}*
-
-
-let capsPerson = Object. fromEntries(
+let updatedPriceData = Object. fromEntries(
     Object.entries(priceData).map(([key, value]) => [key.toLowerCase(), parseFloat(value).toFixed(2)])
 );
-console.log(capsPerson);
+console.log(updatedPriceData); // {apples: '23.40', bananas: '48.00', oranges: '48.76'}*
 
 //Just visual enter
 console.log('------------------------')
